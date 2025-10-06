@@ -1,0 +1,157 @@
+==========================================
+File & Folder Use
+==========================================
+. → Current user folder
+.. → C:\Users
+%userprofile% → User profile folder
+%appdata% → Roaming AppData
+%localappdata% → Local AppData
+%temp% → Temp folder
+shell:startup → User Startup folder
+shell:common startup → All users Startup folder
+shell:downloads → Downloads
+shell:desktop → Desktop
+
+
+==========================================
+Useful Admin Commands
+==========================================
+gpedit.msc → Group Policy Editor (Pro/Enterprise only)
+secpol.msc → Local Security Policy
+diskmgmt.msc → Disk Management
+devmgmt.msc → Device Manager
+cleanmgr → Disk Cleanup
+lusrmgr.msc → Local Users and Groups (Pro/Enterprise only)
+control printers → Devices & Printers
+
+
+==========================================
+System Tools
+==========================================
+cmd → Command Prompt
+powershell → Windows PowerShell
+wt → Windows Terminal (Win 10/11)
+taskmgr → Task Manager
+msconfig → System Configuration
+regedit → Registry Editor
+services.msc → Services Manager
+compmgmt.msc → Computer Management
+eventvwr → Event Viewer
+perfmon → Performance Monitor
+dxdiag → DirectX Diagnostic Tool
+dccw → Color Calibration
+control → Control Panel
+
+
+==========================================
+Utility Tools
+==========================================
+notepad
+write
+mspaint/pbrush
+calc
+snippingtool
+osk
+
+
+==========================================
+System check & Specification
+==========================================
+dxdiag
+msinfo32
+winver
+cmd
+powershell
+
+
+==========================================
+Cleanup & Performance Boost
+==========================================
+cleanmgr
+%temp% / temp
+prefetch
+msconfig
+scandisk
+defrag
+
+
+==========================================
+Settings & Utility
+==========================================
+control
+appwiz.cpl
+service.msc
+cliconfig - SQL Server/ODBC
+mobsync
+sfc
+hwinfo /ui
+perfmon.msc - Performance Monitorz-
+
+
+==========================================
+Network & Browser
+==========================================
+ncpa.cpl
+inetcpl.cpl
+ping.google.com
+ftp - FTP
+chrome
+ipcongig /dns
+
+
+==========================================
+System & User Folders
+==========================================
+shell:desktop → Your Desktop folder
+shell:downloads → Downloads folder
+shell:documents → Documents folder
+shell:music → Music folder
+shell:pictures → Pictures folder
+shell:videos → Videos folder
+shell:appsFolder → Installed apps list (like hidden Start Menu view)
+shell:recent → Recently opened files
+shell:sendto → “Send To” context menu items
+shell:startup → User Startup folder (programs auto-start here)
+shell:common startup → All users’ Startup folder
+
+
+==========================================
+Settings & System Locations
+==========================================
+shell:ControlPanelFolder → Control Panel
+shell:network → Network folder
+shell:printersfolder → Devices & Printers
+shell:fonts → Fonts folder
+shell:ProgramsAndFeatures → Installed programs (Add/Remove)
+shell:Common Programs → Shared Start Menu programs
+shell:appdata → Current user AppData\Roaming
+shell:local appdata → AppData\Local
+shell:common appdata → ProgramData folder
+
+
+==========================================
+Advanced / Admin Locations
+==========================================
+shell:windows → Windows installation folder (C:\Windows)
+shell:system → System32 folder
+shell:profile → Current user profile folder
+shell:public → Public user profile folder
+shell:ProgramFiles → Program Files
+shell:ProgramFilesX86 → Program Files (x86)
+shell:Common Desktop → Shared Desktop (all users)
+shell:Common Documents → Shared Documents
+
+
+==========================================
+Fix Taskbar Icon Not Showing Issure××××
+==========================================
+Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell\Update\Packages
+Create DWORD (32-bit) Value
+Name: UndockingDisabled
+Right Click > Modify
+Base: Decimal
+Value: 1
+
+
+Rahat PC Anydesk: ar!Rahat
+windows Pass: 

@@ -1,0 +1,329 @@
+# =============================================================================
+#  GlazeWM Configuration - Redesigned for Windows 11
+# =============================================================================
+#
+#  This configuration has been updated for a more modern feel on Windows 11,
+#  enabling features like rounded corners and transparency. Keybindings remain
+#  largely the same to preserve muscle memory, but aesthetics have been tweaked.
+#
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+#  General Settings
+# -----------------------------------------------------------------------------
+general:
+  # Commands to run when GlazeWM starts.
+  # Example: Uncomment the line below to launch Zebar on startup.
+  # startup_commands: ['zebar']
+  startup_commands: []
+
+  # Commands to run just before GlazeWM shuts down.
+  # Example: Uncomment to kill Zebar on shutdown.
+  # shutdown_commands: ['taskkill /IM zebar.exe /F']
+  shutdown_commands: []
+
+  # Commands to run after the configuration is reloaded.
+  config_reload_commands: []
+
+  # Whether to automatically focus windows underneath the cursor.
+  focus_follows_cursor: false
+
+  # Whether to switch back and forth between the previously focused
+  # workspace when focusing the current workspace.
+  toggle_workspace_on_refocus: false
+
+  cursor_jump:
+    # Whether to automatically move the cursor when focus changes.
+    enabled: true
+
+    # Trigger for cursor jump:
+    # - 'monitor_focus': Jump when focus changes between monitors.
+    # - 'window_focus': Jump when focus changes between windows.
+    trigger: 'monitor_focus'
+
+  # How windows should be hidden when switching workspaces. 'cloak' is recommended.
+  hide_method: 'cloak'
+
+  # Affects which windows get shown in the native Windows taskbar.
+  # - 'true': Show all windows from all workspaces.
+  # - 'false': Only show windows from the current workspace.
+  show_all_in_taskbar: false
+
+# -----------------------------------------------------------------------------
+#  Gaps & Spacing
+# -----------------------------------------------------------------------------
+gaps:
+  # Whether to scale gaps with the monitor's DPI. Essential for HiDPI screens.
+  scale_with_dpi: true
+
+  # Gap between adjacent windows.
+  inner_gap: '8px'
+
+  # Gap between windows and the screen edge.
+  outer_gap:
+    top: '8px'
+    right: '8px'
+    bottom: '8px'
+    left: '8px'
+
+# -----------------------------------------------------------------------------
+#  Window Effects (Windows 11 Styling)
+# -----------------------------------------------------------------------------
+window_effects:
+  # Visual effects for the currently focused window.
+  focused_window:
+    # Highlight with a colored border (Exclusive to Windows 11).
+    border:
+      enabled: true
+      color: '#0078d4' # A vibrant Windows 11 accent blue
+
+    # Removes the title bar. Can cause rendering issues for some apps.
+    hide_title_bar:
+      enabled: false
+
+    # Change the corner style of the window (Exclusive to Windows 11).
+    corner_style:
+      enabled: true
+      style: 'rounded' # Use 'rounded' or 'small_rounded' for a modern look.
+
+    # Add a subtle transparency effect.
+    transparency:
+      enabled: true
+      opacity: '95%'
+
+  # Visual effects for all other non-focused windows.
+  other_windows:
+    border:
+      enabled: true
+      color: '#4a4a4a' # A darker, less distracting border
+    hide_title_bar:
+      enabled: false
+    corner_style:
+      enabled: true
+      style: 'rounded'
+    transparency:
+      enabled: true
+      opacity: '90%'
+
+# -----------------------------------------------------------------------------
+#  Window Behavior
+# -----------------------------------------------------------------------------
+window_behavior:
+  # New windows are created in this state whenever possible.
+  # Allowed values: 'tiling', 'floating'.
+  initial_state: 'tiling'
+
+  # Default options for different window states.
+  state_defaults:
+    floating:
+      centered: true
+      shown_on_top: false
+    fullscreen:
+      maximized: false
+      shown_on_top: false
+
+# -----------------------------------------------------------------------------
+#  Workspaces
+# -----------------------------------------------------------------------------
+workspaces:
+  # For a more visual setup, you can use Nerd Fonts to add icons.
+  # Example:
+  # - name: '1: ' # Web
+  # - name: '2: ' # Code
+  # - name: '3: ' # Terminal
+  - name: '1'
+  - name: '2'
+  - name: '3'
+  - name: '4'
+  - name: '5'
+  - name: '6'
+  - name: '7'
+  - name: '8'
+  - name: '9'
+
+# -----------------------------------------------------------------------------
+#  Window Rules
+# -----------------------------------------------------------------------------
+window_rules:
+  # Rules to ignore certain windows from being managed by GlazeWM.
+  - commands: ['ignore']
+    match:
+      # Ignore status bars.
+      - window_process: { equals: 'zebar' }
+
+      # Ignore browser picture-in-picture windows.
+      - window_title: { regex: '[Pp]icture.in.[Pp]icture' }
+        window_class: { regex: 'Chrome_WidgetWin_1|MozillaDialogClass' }
+
+      # Ignore rules for various 3rd-party apps.
+      - window_process: { equals: 'PowerToys' }
+        window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
+      - window_process: { equals: 'PowerToys' }
+        window_title: { regex: '.*? - Peek' }
+      - window_process: { equals: 'Lively' }
+        window_class: { regex: 'HwndWrapper' }
+
+      # Ignore splash screens and dialogs for Microsoft Office.
+      - window_process: { equals: 'EXCEL' }
+        window_class: { not_regex: 'XLMAIN' }
+      - window_process: { equals: 'WINWORD' }
+        window_class: { not_regex: 'OpusApp' }
+      - window_process: { equals: 'POWERPNT' }
+        window_class: { not_regex: 'PPTFrameClass' }
+
+# -----------------------------------------------------------------------------
+#  Binding Modes
+# -----------------------------------------------------------------------------
+binding_modes:
+  # When enabled, the focused window can be resized with hjkl or arrow keys.
+  - name: 'resize'
+    keybindings:
+      - { commands: ['resize --width -2%'], bindings: ['h', 'left'] }
+      - { commands: ['resize --width +2%'], bindings: ['l', 'right'] }
+      - { commands: ['resize --height +2%'], bindings: ['k', 'up'] }
+      - { commands: ['resize --height -2%'], bindings: ['j', 'down'] }
+      # Press enter/escape to exit resize mode.
+      - {
+          commands: ['wm-disable-binding-mode --name resize'],
+          bindings: ['escape', 'enter'],
+        }
+
+# -----------------------------------------------------------------------------
+#  Keybindings
+# -----------------------------------------------------------------------------
+keybindings:
+  # --- Window Focus & Movement ---
+  # Focus window in a direction
+  - { commands: ['focus --direction left'], bindings: ['alt+h', 'alt+left'] }
+  - { commands: ['focus --direction right'], bindings: ['alt+l', 'alt+right'] }
+  - { commands: ['focus --direction up'], bindings: ['alt+k', 'alt+up'] }
+  - { commands: ['focus --direction down'], bindings: ['alt+j', 'alt+down'] }
+
+  # Move focused window in a direction
+  - {
+      commands: ['move --direction left'],
+      bindings: ['alt+shift+h', 'alt+shift+left'],
+    }
+  - {
+      commands: ['move --direction right'],
+      bindings: ['alt+shift+l', 'alt+shift+right'],
+    }
+  - {
+      commands: ['move --direction up'],
+      bindings: ['alt+shift+k', 'alt+shift+up'],
+    }
+  - {
+      commands: ['move --direction down'],
+      bindings: ['alt+shift+j', 'alt+shift+down'],
+    }
+
+  # --- Window Resizing ---
+  # Enter resize mode (use hjkl/arrows)
+  - { commands: ['wm-enable-binding-mode --name resize'], bindings: ['alt+r'] }
+
+  # Direct resizing (alternative to resize mode)
+  - { commands: ['resize --width -2%'], bindings: ['alt+u'] }
+  - { commands: ['resize --width +2%'], bindings: ['alt+p'] }
+  - { commands: ['resize --height +2%'], bindings: ['alt+o'] }
+  - { commands: ['resize --height -2%'], bindings: ['alt+i'] }
+
+  # --- Window State Management ---
+  # Toggle between tiling and floating
+  - { commands: ['toggle-floating --centered'], bindings: ['alt+shift+space'] }
+  # Force window to be tiling
+  - { commands: ['toggle-tiling'], bindings: ['alt+t'] }
+  # Toggle fullscreen
+  - { commands: ['toggle-fullscreen'], bindings: ['alt+f'] }
+  # Minimize focused window
+  - { commands: ['toggle-minimized'], bindings: ['alt+m'] }
+  # Close focused window
+  - { commands: ['close'], bindings: ['alt+shift+q'] }
+
+  # --- Tiling Layout ---
+  # Cycle focus between tiling, floating, and fullscreen windows
+  - { commands: ['wm-cycle-focus'], bindings: ['alt+space'] }
+  # Change tiling direction (new windows open horizontally/vertically)
+  - { commands: ['toggle-tiling-direction'], bindings: ['alt+v'] }
+
+  # --- Workspace Management ---
+  # Focus a specific workspace
+  - { commands: ['focus --workspace 1'], bindings: ['alt+1'] }
+  - { commands: ['focus --workspace 2'], bindings: ['alt+2'] }
+  - { commands: ['focus --workspace 3'], bindings: ['alt+3'] }
+  - { commands: ['focus --workspace 4'], bindings: ['alt+4'] }
+  - { commands: ['focus --workspace 5'], bindings: ['alt+5'] }
+  - { commands: ['focus --workspace 6'], bindings: ['alt+6'] }
+  - { commands: ['focus --workspace 7'], bindings: ['alt+7'] }
+  - { commands: ['focus --workspace 8'], bindings: ['alt+8'] }
+  - { commands: ['focus --workspace 9'], bindings: ['alt+9'] }
+
+  # Move focused window to a specific workspace (and follow it)
+  - {
+      commands: ['move --workspace 1', 'focus --workspace 1'],
+      bindings: ['alt+shift+1'],
+    }
+  - {
+      commands: ['move --workspace 2', 'focus --workspace 2'],
+      bindings: ['alt+shift+2'],
+    }
+  - {
+      commands: ['move --workspace 3', 'focus --workspace 3'],
+      bindings: ['alt+shift+3'],
+    }
+  - {
+      commands: ['move --workspace 4', 'focus --workspace 4'],
+      bindings: ['alt+shift+4'],
+    }
+  - {
+      commands: ['move --workspace 5', 'focus --workspace 5'],
+      bindings: ['alt+shift+5'],
+    }
+  - {
+      commands: ['move --workspace 6', 'focus --workspace 6'],
+      bindings: ['alt+shift+6'],
+    }
+  - {
+      commands: ['move --workspace 7', 'focus --workspace 7'],
+      bindings: ['alt+shift+7'],
+    }
+  - {
+      commands: ['move --workspace 8', 'focus --workspace 8'],
+      bindings: ['alt+shift+8'],
+    }
+  - {
+      commands: ['move --workspace 9', 'focus --workspace 9'],
+      bindings: ['alt+shift+9'],
+    }
+
+  # --- Quick Workspace Navigation ---
+  # Focus next/previous active workspace
+  - { commands: ['focus --next-active-workspace'], bindings: ['alt+s'] }
+  - { commands: ['focus --prev-active-workspace'], bindings: ['alt+a'] }
+  # Focus the most recently used workspace
+  - { commands: ['focus --recent-workspace'], bindings: ['alt+d'] }
+
+  # --- Multi-Monitor Management ---
+  # Move the entire workspace to another monitor
+  - { commands: ['move-workspace --direction left'], bindings: ['alt+shift+a'] }
+  - {
+      commands: ['move-workspace --direction right'],
+      bindings: ['alt+shift+f'],
+    }
+  - { commands: ['move-workspace --direction up'], bindings: ['alt+shift+d'] }
+  - { commands: ['move-workspace --direction down'], bindings: ['alt+shift+s'] }
+
+  # --- Application Launchers ---
+  # Launch Windows Terminal
+  - { commands: ['shell-exec wt'], bindings: ['alt+enter'] }
+  # Example for PowerToys Run (change binding as needed)
+  # - { commands: ['shell-exec "C:/Program Files/PowerToys/PowerToys.Runner.exe"'], bindings: ['alt+ctrl+space'] }
+
+  # --- GlazeWM Commands ---
+  # Pause/Resume window management
+  - { commands: ['wm-toggle-pause'], bindings: ['alt+shift+p'] }
+  # Reload this configuration file
+  - { commands: ['wm-reload-config'], bindings: ['alt+shift+r'] }
+  # Redraw all windows (useful if something looks strange)
+  - { commands: ['wm-redraw'], bindings: ['alt+shift+w'] }
+  # Exit GlazeWM safely
+  - { commands: ['wm-exit'], bindings: ['alt+shift+e'] }

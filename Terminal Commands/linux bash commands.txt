@@ -1,0 +1,206 @@
+fastfetch
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Arch Linux Installation Commands
++++++++++++++++++++++++++++++++++++++++++++++++++++
+	sudo pacman -Sy
+	pacman -S archlinux-keyring 
+	archinstall
+	sudo pacman -S linux-headers
+	chmod 777 VBOXLinuxAdditions.run
+	sudo ./VBOXLinuxAdditions.run
+
+++++++++++++++++++++++
+Linux Bash Commands
+++++++++++++++++++++++
+	sudo apt install update/upgrade
+	su root
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+View Hard Disks
++++++++++++++++++++++++++++++++++++++++++++++++++++
+	fdisk -l
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Use cfdisk command to create partitions.
++++++++++++++++++++++++++++++++++++++++++++++++++++
+	cfdisk /dev/sda
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Create 3 Partitions
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/dev/sda1 for boot 1GB
+/dev/sda2 for swap 4GB
+/dev/sda3
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Format Partitions
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    mkfs.ext4 /dev/sda1
+    mkswap /dev/sda2
+    swapon /dev/sda2
+    mkfs.ext4 /dev/sda3
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Mount Root Partition
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    mount /dev/sda3 /mnt
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Create Folders
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    mkdir /mnt/boot /mnt/var /mnt/home
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Mount Boot Partition
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    mount /dev/sda1 /mnt/boot
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Check Network Connection
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    ping -c 3 google.com
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sync the pacman repository
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    pacman -Syy
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Install Arch Linux base system and devel
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd net-tools grub
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configure the Arch Linux System
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    genfstab -U /mnt >> /mnt/etc/fstab
+    arch-chroot /mnt
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Set the System Language
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    nano /etc/locale.gen
+    locale-gen
+    echo LANG=en_US.UTF-8 > /etc/locale.conf
+    export LANG=en_US.UTF-8
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Set Arch Linux Clock and Time Zone
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    ls /usr/share/zoneinfo/
+    rm -rf /etc/localtime
+    ln –s /usr/share/zoneinfo/Amerika/New_York /etc/localtime
+
+    hwclock --systohc --utc
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Set Hostname
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    echo arch2017 > /etc/hostname
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Enable DHCPCD Service (DHCP Client Service)
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    systemctl enable dhcpcd.service
+
+    
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Install and Configure openssh
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    pacman -Sy openssh
+    systemctl enable sshd.service
+
+Set Root Password
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    passwd root
+
+Create Additional User
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    useradd -m -g users -G wheel -s /bin/bash nikola
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Set password for new user
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    passwd nikola
+
+Edit /etc/sudoers
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    	nano /etc/sudoers
+          Add nikola under root
+            nikola ALL=(ALL) ALL
+
+Install and configure GRUB Boot Loader
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    	grub-install /dev/sda
+    	grub-mkconfig –o /boot/grub/grub.cfg
+	mkinitcpio –p linux
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Reboot and login as root
++++++++++++++++++++++++++++++++++++++++++++++++++++
+     exit
+     exit
+     umount /mnt/boot
+     umount /mnt
+     reboot
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Check Network Connection
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    ping -c 3 www.google.com
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Check IP Address
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    ifconfig
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Install xorg and Related Packages
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    pacman -Sy xorg #xterm xorg-twm xorg-xinit xorg-server-utils
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Install GNOME Desktop
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    pacman -Sy gnome gnome-extra
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Enable gdm
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    systemctl enable gdm.service
+    systemctl enable NetworkManager.service
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Install Apps
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    pacman -Sy firefox vlc gimp libreoffice archlinux-wallpaper
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Install Prerequisite packages
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    pacman -Sy gtkmm
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Install Open-VM-Tools
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    pacman -Sy open-vm-tools
+    pacman -Sy xf86-video-vmware
+    pacman -Sy xf86-input-vmmouse
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Enable VMware Tools service
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    systemctl enable vmtoolsd.service
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Reboot System
++++++++++++++++++++++++++++++++++++++++++++++++++++
+    reboot
+
+
+
+
+

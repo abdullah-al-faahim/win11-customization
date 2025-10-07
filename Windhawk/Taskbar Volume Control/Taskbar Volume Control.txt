@@ -1,0 +1,1 @@
+{"volumeIndicator":"win11","scrollArea":"taskbar","middleClickToMute":1,"ctrlScrollVolumeChange":0,"noAutomaticMuteToggle":0,"volumeChangeStep":2,"oldTaskbarOnWin11":0}

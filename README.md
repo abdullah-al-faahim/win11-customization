@@ -54,13 +54,14 @@ C:\Users\<YourUser>\.config\yasb\
 ```
 4. **Restart / relogin:** Some changes (fonts, Explorer tweaks) may need a logoff or system restart to take full effect.
 
+---
 
 ## 🛠 Tips & Best Practices
 
-- Backup first. Always back up current config files, registry settings, or system state before applying.
-- One tool at a time. Roll out changes component by component to isolate issues.
-- Check compatibility. Some tweaks might conflict with Windows updates or system policies.
-- Use version control. Keep track of your own customizations via Git in a fork or local branch.
+- **Backup first.** Always back up current config files, registry settings, or system state before applying.
+- **One tool at a time.** Roll out changes component by component to isolate issues.
+- **Check compatibility.** Some tweaks might conflict with Windows updates or system policies.
+- **Use version control.** Keep track of your own customizations via Git in a fork or local branch.
 
 ---
 

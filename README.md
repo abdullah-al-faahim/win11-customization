@@ -65,6 +65,22 @@ C:\Users\<YourUser>\.config\yasb\
 
 ---
 
+## 🧰 Contribution & Guidelines
+
+Contributions are welcome! Here’s how to help:
+- Fork the repository
+- Create a feature branch or improvement
+- Test thoroughly
+- Submit a pull request explaining your changes
+- Add or update documentation (especially component-level readmes)
+
+Before contributing, please adhere to:
+1. Maintain clarity in instructions
+2. Avoid destructive scripts without backups
+3. Ensure compatibility with recent versions of Windows 11
+
+---
+
 <div>
 
 ## 🙏 Acknowledgements

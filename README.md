@@ -65,7 +65,7 @@ C:\Users\<YourUser>\.config\yasb\
 ---
 
 <p align="center">
-Thank you for checking out **Win11 Customization Hub!** 💻
+Thank you for checking out **Win11 Customization Hub!** 💻\\
 May your Windows desktop be both beautiful and powerful.
 </p>
 

@@ -30,8 +30,6 @@ This repository is organized into several “modules” or “components,” eac
 | **OBS** | App config | Optimized configs for OBS Studio | Presets, settings files |
 | **Wallpaper** | Asset | A curated set of wallpapers fitting the visual theme | `.png` or `.jpg` files |
 
-> 💡 *Each component directory typically contains a `README.md`, installation instructions, or config files explained in-place.*
-
 ---
 
 ## 📥 Setup / Getting Started
@@ -42,6 +40,7 @@ Follow these steps to apply the customizations to your system:
    ```bash
    git clone https://github.com/abdullah-al-faahim/win11-customization.git
    cd win11-customization
+   ```
 
 
 

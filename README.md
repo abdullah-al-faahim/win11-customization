@@ -63,6 +63,7 @@ C:\Users\<YourUser>\.config\yasb\
 - Use version control. Keep track of your own customizations via Git in a fork or local branch.
 
 ---
+
 <div>
 
 ## 🙏 Acknowledgements
@@ -73,6 +74,7 @@ A huge thank you to the developers of the incredible tools that make this setup 
 - Ryan L McIntyre (Nerd Fonts)
 
 </div>
+
 ---
 
 <p align="center">

@@ -6,7 +6,7 @@ A curated collection of tools, configurations, and resources to transform your W
 </div>
 
 
-🚀 Introduction
+## 🚀 Introduction
 This repository contains all the configuration files, scripts, and links to the tools I use to customize my Windows 11 setup. Whether you're a developer, a power user, or just someone who loves a beautiful and efficient desktop, you'll find something useful here.
 
 <p align="center">

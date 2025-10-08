@@ -64,6 +64,7 @@ C:\Users\<YourUser>\.config\yasb\
 
 
 ## Files Directory
+```bash
 win11-customization/
 ├─ GlazeWM/
 │   ├─ config.json
@@ -97,7 +98,7 @@ win11-customization/
 │   ├─ *.jpg / *.png
 │   ├─ README.md
 └─ README.md
-
+```
 
 
 

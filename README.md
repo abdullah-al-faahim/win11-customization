@@ -55,6 +55,52 @@ C:\Users\<YourUser>\.config\yasb\
 4. **Restart / relogin:** Some changes (fonts, Explorer tweaks) may need a logoff or system restart to take full effect.
 
 
+## 🛠 Tips & Best Practices
+
+- Backup first. Always back up current config files, registry settings, or system state before applying.
+- One tool at a time. Roll out changes component by component to isolate issues.
+- Check compatibility. Some tweaks might conflict with Windows updates or system policies.
+- Use version control. Keep track of your own customizations via Git in a fork or local branch.
+
+
+## Files Directory
+win11-customization/
+├─ GlazeWM/
+│   ├─ config.json
+│   ├─ README.md
+├─ YASB/
+│   ├─ statusbar-config.toml
+│   ├─ README.md
+├─ Windhawk/
+│   ├─ mods/
+│   ├─ profile/
+├─ Flow Launcher/
+│   ├─ themes/
+│   ├─ settings.json
+├─ Terminal/
+│   ├─ settings.json
+│   ├─ README.md
+├─ Change Windows Default Font/
+│   ├─ install-font.ps1
+│   ├─ README.md
+├─ Discord/
+│   ├─ custom.css
+│   ├─ README.md
+├─ File Explorer/
+│   ├─ tweak.reg
+│   ├─ README.md
+├─ OBS/
+│   ├─ profiles/
+│   ├─ presets/
+│   ├─ README.md
+├─ Wallpaper/
+│   ├─ *.jpg / *.png
+│   ├─ README.md
+└─ README.md
+
+
+
+
 <p align="center">
 Made with ❤️ by abdullah-al-faahim
 </p>

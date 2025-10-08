@@ -42,9 +42,11 @@ Follow these steps to apply the customizations to your system:
    cd win11-customization
    ```
 2. **Install the required tools/applications**
+
 Manually download and install the tools referenced in the Components section (GlazeWM, Windhawk, Flow Launcher, etc.). Many links are included in each component’s folder or documentation.
 
 3. **Apply configurations**
+
 For each tool/app you wish to customize, go into its folder and follow the instructions:
 
 - Copy / merge config files to the proper paths
@@ -58,6 +60,7 @@ C:\Users\<YourUser>\.config\yasb\
 ```
 
 4. **Restart / relogin**
+
 Some changes (fonts, Explorer tweaks) may need a logoff or system restart to take full effect.
 
 

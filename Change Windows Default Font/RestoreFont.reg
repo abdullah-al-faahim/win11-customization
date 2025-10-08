@@ -1,0 +1,17 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts]
+"Segoe UI (TrueType)"="segoeui.ttf"
+"Segoe UI Black (TrueType)"="seguibl.ttf"
+"Segoe UI Black Italic (TrueType)"="seguibli.ttf"
+"Segoe UI Bold (TrueType)"="segoeuib.ttf"
+"Segoe UI Bold Italic (TrueType)"="segoeuiz.ttf"
+"Segoe UI Emoji (TrueType)"="seguiemj.ttf"
+"Segoe UI Historic (TrueType)"="seguihis.ttf"
+"Segoe UI Italic (TrueType)"="segoeuii.ttf"
+"Segoe UI Light (TrueType)"="segoeuil.ttf"
+"Segoe UI Semibold (TrueType)"="seguisb.ttf"
+"Segoe UI Symbol (TrueType)"="seguisym.ttf"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]
+"Segoe UI"=-

@@ -154,7 +154,7 @@ widgets:
         circle_background_color: '#09ffffff'
         circle_work_progress_color: '#88c0d0'
         circle_break_progress_color: '#a3be8c'
-        circle_thickness: 8
+        circle_thickness: 10
         circle_size: 160
       callbacks:
         on_left: 'toggle_menu'
@@ -163,7 +163,7 @@ widgets:
       label_shadow:
         enabled: true
         color: 'black'
-        radius: 3
+        radius: 2
         offset: [1, 1]
   volume:
     type: 'yasb.volume.VolumeWidget'

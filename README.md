@@ -1,6 +1,6 @@
 <div align="center">
 
-My Modern Windows Desktop 🖥️✨
+# My Modern Windows Desktop 🖥️✨
 A curated collection of tools, configurations, and resources to transform your Windows 11 experience into a personalized and productive environment.
 
 </div>

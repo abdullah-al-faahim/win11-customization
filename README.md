@@ -63,12 +63,16 @@ C:\Users\<YourUser>\.config\yasb\
 - Use version control. Keep track of your own customizations via Git in a fork or local branch.
 
 ---
+<div>
 
-<p align="center">
-Thank you for checking out **Win11 Customization Hub!** 💻\\
-May your Windows desktop be both beautiful and powerful.
-</p>
+## 🙏 Acknowledgements
+A huge thank you to the developers of the incredible tools that make this setup possible. Please consider supporting their projects!
+- GlazeWM Team
+- Amn-web (yasb)
+- Ramensoftware (Windhawk)
+- Ryan L McIntyre (Nerd Fonts)
 
+</div>
 ---
 
 <p align="center">

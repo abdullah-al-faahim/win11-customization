@@ -77,6 +77,14 @@ A huge thank you to the developers of the incredible tools that make this setup 
 
 ---
 
+## 📜 License & Disclaimer
+
+All configurations, scripts, and assets are open-source. Use them at your own risk — this repository does not guarantee system stability or security after applying changes. Always back up your system, and proceed cautiously, especially with registry or system-level modifications.
+
+
+
+---
+
 <p align="center">
 Made with ❤️ by abdullah-al-faahim
 </p>

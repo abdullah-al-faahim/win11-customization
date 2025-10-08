@@ -41,27 +41,18 @@ Follow these steps to apply the customizations to your system:
    git clone https://github.com/abdullah-al-faahim/win11-customization.git
    cd win11-customization
    ```
-2. **Install the required tools/applications**
+2. **Install the required tools/applications:** Manually download and install the tools referenced in the Components section (GlazeWM, Windhawk, Flow Launcher, etc.). Many links are included in each component’s folder or documentation.
 
-Manually download and install the tools referenced in the Components section (GlazeWM, Windhawk, Flow Launcher, etc.). Many links are included in each component’s folder or documentation.
-
-3. **Apply configurations**
-
-For each tool/app you wish to customize, go into its folder and follow the instructions:
-
+3. **Apply configurations:** For each tool/app you wish to customize, go into its folder and follow the instructions:
 - Copy / merge config files to the proper paths
 - Execute scripts (where applicable)
 - Adjust or override settings as needed
-
-```bash
 Example:
 If you want to apply your yasb config, you might put files into
+```bash
 C:\Users\<YourUser>\.config\yasb\
 ```
-
-4. **Restart / relogin**
-
-Some changes (fonts, Explorer tweaks) may need a logoff or system restart to take full effect.
+4. **Restart / relogin:** Some changes (fonts, Explorer tweaks) may need a logoff or system restart to take full effect.
 
 
 <p align="center">

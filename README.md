@@ -62,45 +62,12 @@ C:\Users\<YourUser>\.config\yasb\
 - Check compatibility. Some tweaks might conflict with Windows updates or system policies.
 - Use version control. Keep track of your own customizations via Git in a fork or local branch.
 
+---
 
-## Files Directory
-```bash
-win11-customization/
-├─ GlazeWM/
-│   ├─ config.json
-│   ├─ README.md
-├─ YASB/
-│   ├─ statusbar-config.toml
-│   ├─ README.md
-├─ Windhawk/
-│   ├─ mods/
-│   ├─ profile/
-├─ Flow Launcher/
-│   ├─ themes/
-│   ├─ settings.json
-├─ Terminal/
-│   ├─ settings.json
-│   ├─ README.md
-├─ Change Windows Default Font/
-│   ├─ install-font.ps1
-│   ├─ README.md
-├─ Discord/
-│   ├─ custom.css
-│   ├─ README.md
-├─ File Explorer/
-│   ├─ tweak.reg
-│   ├─ README.md
-├─ OBS/
-│   ├─ profiles/
-│   ├─ presets/
-│   ├─ README.md
-├─ Wallpaper/
-│   ├─ *.jpg / *.png
-│   ├─ README.md
-└─ README.md
-```
+Thank you for checking out **Win11 Customization Hub! 💻**
+May your Windows desktop be both beautiful and powerful.
 
-
+---
 
 <p align="center">
 Made with ❤️ by abdullah-al-faahim

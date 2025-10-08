@@ -53,6 +53,11 @@ If you want to apply your yasb config, you might put files into
 C:\Users\<YourUser>\.config\yasb\
 ```
 4. **Restart / relogin:** Some changes (fonts, Explorer tweaks) may need a logoff or system restart to take full effect.
+5. **Run on Startup**
+To ensure GlazeWM and yasb launch automatically every time Windows starts:
+- Press Win + R to open the Run dialog box.
+- Type shell:startup and press Enter.
+- In the folder that opens, create shortcuts to the GlazeWM.exe and yasb.exe executables.
 
 ---
 

@@ -186,13 +186,12 @@ widgets:
       blur: False
       blur_background: True
       animation_duration: 200 # Milisecond
-      button_row: 5 # Number of buttons in row, min 1 max 5
+      button_row: 2 # Number of buttons in row, min 1 max 5
       buttons:
-        shutdown: ["\uf011", 'Shut Down']
-        restart: ["\uead2", 'Restart']
-        signout: ["\udb80\udf43", 'Sign out']
-        hibernate: ["\uf28e", 'Hibernate']
         sleep: ["\u23fe", 'Sleep']
+        signout: ["\udb80\udf43", 'Sign out']
+        restart: ["\uead2", 'Restart']
+        shutdown: ["\uf011", 'Shut Down']
         cancel: ['', 'Cancel']
   taskbar:
     type: 'yasb.taskbar.TaskbarWidget'
@@ -213,7 +212,7 @@ widgets:
   win_button:
     type: 'yasb.custom.CustomWidget'
     options:
-      label: "<span>\udb80\udf5c</span>"
+      label: "<span>\uf17a</span>"
       label_alt: "<span>\udb80\udf5c</span>"
       class_name: 'win-btn'
       callbacks:

@@ -1,1 +1,1 @@
-https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+https://www.jetbrains.com/lp/mono/

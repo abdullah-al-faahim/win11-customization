@@ -213,7 +213,7 @@
 
 /*POWER MENU POPUP*/
 .uptime {
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 10px;
   color: rgba(191, 202, 219, 0.726);
   font-weight: 600;
@@ -224,11 +224,11 @@
 }
 .power-menu-popup .button {
   padding: 0;
-  width: 180px;
-  height: 230px;
-  border-radius: 8px;
+  width: 380px;
+  height: 200px;
+  border-radius: 16px;
   background-color: #221f2e;
-  color: #f3bf7d;
+  color: #b7dde3;
   border: 8px solid #1b1925;
   margin: 0px;
 }
@@ -239,12 +239,12 @@
   margin-bottom: 8px;
   font-size: 16px;
   font-weight: 500;
-  color: #f3bf7d;
+  color: #b7dde3;
 }
 .power-menu-popup .button .icon {
   font-size: 64px;
   padding-top: 32px;
-  color: #f3bf7d;
+  color: #b7dde3;
 }
 .power-menu-popup .button.cancel .icon {
   padding: 0;
@@ -255,9 +255,9 @@
 }
 
 .power-menu-popup .button.cancel {
-  height: 32px;
-  border-radius: 4px;
-  border: none;
+  height: 45px;
+  border-radius: 16px;
+  border: 8px solid #1b1925;
   background-color: #221f2e;
 }
 .power-menu-popup .button.cancel:hover {

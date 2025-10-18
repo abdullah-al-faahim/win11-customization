@@ -61,10 +61,10 @@ gaps:
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: '8px'
-    right: '8px'
-    bottom: '8px'
-    left: '8px'
+    top: '6px'
+    right: '6px'
+    bottom: '6px'
+    left: '6px'
 
 # -----------------------------------------------------------------------------
 #  Window Effects (Windows 11 Styling)
@@ -111,7 +111,7 @@ window_effects:
 window_behavior:
   # New windows are created in this state whenever possible.
   # Allowed values: 'tiling', 'floating'.
-  initial_state: 'tiling'
+  initial_state: 'floating'
 
   # Default options for different window states.
   state_defaults:
@@ -241,7 +241,7 @@ keybindings:
 
   # --- Tiling Layout ---
   # Cycle focus between tiling, floating, and fullscreen windows
-  - { commands: ['wm-cycle-focus'], bindings: ['alt+space'] }
+  - { commands: ['wm-cycle-focus'], bindings: ['alt+space+b'] }
   # Change tiling direction (new windows open horizontally/vertically)
   - { commands: ['toggle-tiling-direction'], bindings: ['alt+v'] }
 

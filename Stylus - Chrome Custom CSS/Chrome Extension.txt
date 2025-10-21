@@ -1,0 +1,14 @@
+1. Adguard Ad Blocker
+2. Bitwarden Password Manager
+3. IDM Integration Module
+4. Lightshot Screenshot tool
+5. Mobile Simulator
+6. Print friendly
+7. Save image as type
+8. Save to pinterest
+9. stylus
+10. Unhook - Remove recommendations and shorts
+11. uBlock origin dev build
+12. Unban VPN Proxy
+13. vidIQ - vision for YouTube
+14. Sponsorblock for Youtube
